@@ -6,7 +6,9 @@ import {
 } from "@apollo/client";
 
 import SearchPage from './containers/SearchPage'
+import './styleGlobal.css'
 import './App.css';
+
 
 const client = new ApolloClient({
   uri: 'https://graphql-pokemon2.vercel.app',
@@ -15,7 +17,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <div className="app">
+    <div className="app flex flex-column align-center">
       <ApolloProvider client={client}>
         <SearchPage/>
       </ApolloProvider>
