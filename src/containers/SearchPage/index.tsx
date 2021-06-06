@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import './style.css'
 import TextInput from '../../components/TextInput/index';
+import List from '../../components/List/index';
 
 const SearchPage = () => {
   const [text, setText] = useState('')
@@ -11,7 +12,7 @@ const SearchPage = () => {
         value={text}
         onChange={(e) => { setText(e?.target?.value) }}
       />
-      <div>List</div>
+      <List></List>
     </div>
   )
 }
