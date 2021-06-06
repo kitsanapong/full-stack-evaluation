@@ -35,22 +35,63 @@ const GET_POKEMONS_BY_NUMBER = gql`
   }
 `;
 
+const GET_POKEMONS_BY_NAME = gql`
+  query pokemon($id: String, $name: String){
+    pokemon(id: $id, name: $name){
+      id
+      number
+      name
+      weight{
+        minimum
+        maximum
+      }
+      height{
+        minimum
+        maximum
+      }
+      classification
+      types
+      resistant
+      weaknesses
+      fleeRate
+      maxCP
+      maxHP
+      image
+    }
+  }
+`
+
 const SearchPage = () => {
   const [text, setText] = useState('')
-  const { loading, error, data } = useQuery(GET_POKEMONS_BY_NUMBER, {
+  const { data: initialData } = useQuery(GET_POKEMONS_BY_NUMBER, {
     variables: {
       first: 151,
     }
   })
 
-  return (
+  const { data: searchData } = useQuery(GET_POKEMONS_BY_NAME, {
+    variables: {
+      name: text,
+    }
+  })
 
+  const isSearcMode = text !== ''
+  let dataToShow = []
+  if (isSearcMode) {
+    if(searchData?.pokemon) {
+      dataToShow = [searchData?.pokemon]
+    }
+  } else {
+    dataToShow = initialData?.pokemons
+  }
+
+  return (
     <div id="search-page">
       <TextInput
         value={text}
         onChange={(e) => { setText(e?.target?.value) }}
       />
-      <List data={data?.pokemons}></List>
+      <List data={dataToShow}></List>
     </div>
   )
 }

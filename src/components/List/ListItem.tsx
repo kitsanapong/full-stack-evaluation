@@ -21,7 +21,6 @@ const StatItem = ({ matrix, value = 1, maxValue = 1 }: StatItemProps) => {
 }
 
 const ListItem = ({ pokemon}: ListItemProps) => {
-  console.log(pokemon)
   const firstType = pokemon?.types?.[0]
   return (
     <div className={`list-item flex flex-row ${firstType?.toLocaleLowerCase()}-color`}>
