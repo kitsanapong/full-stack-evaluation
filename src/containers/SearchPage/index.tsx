@@ -14,8 +14,6 @@ const GET_POKEMONS_BY_NUMBER = gql`
       number
       name
       types
-      resistant
-      weaknesses
       maxCP
       maxHP
       image
@@ -45,19 +43,7 @@ const GET_POKEMONS_BY_NAME = gql`
       id
       number
       name
-      weight{
-        minimum
-        maximum
-      }
-      height{
-        minimum
-        maximum
-      }
-      classification
       types
-      resistant
-      weaknesses
-      fleeRate
       maxCP
       maxHP
       image
