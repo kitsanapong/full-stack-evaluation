@@ -1,11 +1,16 @@
 import React from 'react'
 
 import './style.css'
+import TextInput from '../../components/TextInput/index';
 
 const SearchPage = () => {
+
   return (
     <div id="search-page" claaName="flex flex-clumn">
-      <div>input</div>
+      <TextInput
+        value="Search Pokemon"
+        onChange={() => {}}
+      />
       <div>List</div>
     </div>
   )
