@@ -33,3 +33,27 @@
 .align-center {
   align-items: center;
 }
+
+.normal-color {
+  background-color: #aa9;
+}
+
+.fire-color {
+  background-color: #f42;
+}
+
+.water-color {
+  background-color: #39f;
+}
+
+.electric-color {
+  background-color: #fc3;
+}
+
+.grass-color {
+  background-color: #7c5;
+}
+
+.poison-color {
+  background-color: #a59;
+}

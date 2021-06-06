@@ -1,3 +1,46 @@
 .list-wrapper {
   margin-top: 12px;
 }
+
+.list-item {
+  margin-bottom: 10px;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.list-item .image img{
+  width: 150px;
+  border-radius: 10px;
+}
+
+.list-item .detail {
+  margin-left: 12px;
+  color: white;
+}
+
+.list-item .detail .number{
+  font-size: 16px;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.list-item .detail .name{
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.list-item .detail .type-wrapper {
+  margin-left: 12px;
+}
+
+.list-item .detail .type-wrapper .type {
+  font-size: 10px;
+  font-weight: bold;
+  height: 18px;
+  line-height: 18px;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin-right: 3px;
+  padding: 0px 3px;
+}
