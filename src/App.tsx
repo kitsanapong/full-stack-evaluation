@@ -1,16 +1,22 @@
 import React from 'react'
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+} from "@apollo/client";
 
 import './App.css';
 
+const client = new ApolloClient({
+  uri: 'https://graphql-pokemon2.vercel.app',
+  cache: new InMemoryCache()
+});
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      App
+    </ApolloProvider>
   );
 }
 
