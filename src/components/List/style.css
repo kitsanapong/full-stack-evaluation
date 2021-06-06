@@ -16,6 +16,7 @@
 .list-item .detail {
   margin-left: 12px;
   color: white;
+  width: 100%;
 }
 
 .list-item .detail .number{
@@ -43,4 +44,56 @@
   border-radius: 3px;
   margin-right: 3px;
   padding: 0px 3px;
+}
+
+.state-wrapper {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.state-column {
+  width: 45%;
+}
+
+.state-item {
+  width: 100%;
+  font-size: 12px;
+}
+
+.state-item .matrix {
+  font-weight: bold;
+  opacity: 0.87;
+  min-width: 55px;
+
+}
+
+.state-item .value {
+  font-weight: bold;
+  margin-left: 3px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.state-item .bar {
+  width: 100%;
+  height: 10px;
+  margin-right: 6px;
+}
+
+.state-item .bar .gaudge{
+  background-color: #F8D030;
+  border:1px solid white;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.sum-state-column {
+  font-weight: bold;
+  height: 45px;
+  align-items: center;
+}
+
+.sum-state-column .matrix{
+  font-size: 12px;
 }
