@@ -64,6 +64,7 @@
 .state-wrapper {
   margin-top: 6px;
   width: 100%;
+  margin-bottom: 1px;
 }
 
 .state-column {
@@ -93,7 +94,7 @@
 
 .state-item .bar {
   width: 100%;
-  height: 10px;
+  height: 12px;
   margin-right: 6px;
   border: 1px solid white;
   border-radius: 3px;
@@ -102,7 +103,7 @@
 
 .state-item .bar .gaudge{
   background-color: #F8D030;
-  height: 10px;
+  height: 12px;
 }
 
 .sum-state-column {
@@ -138,11 +139,14 @@
 }
 
 .evolution-wrapper .evolution{
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   padding: 0px 3px;
   border: 1px solid white;
   margin-right: 6px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 3px;
 }
 
 .attack-wrapper {
