@@ -36,7 +36,7 @@ const ListItem = ({ pokemon }: ListItemProps) => {
           <div className="name">{pokemon?.name}</div>
           <div className="type-wrapper flex flex-row">
             {pokemon?.types?.map((type) =>{
-              return <div key={type} className={`type ${type?.toLocaleLowerCase()}-color`}>{type}</div>
+              return <div key={type} className={`type small ${type?.toLocaleLowerCase()}-color`}>{type}</div>
             })}
           </div>
         </div>
@@ -56,11 +56,13 @@ const ListItem = ({ pokemon }: ListItemProps) => {
         </div>
         <div className="attack-wrapper flex flex-row">
           <div className="name">Attack Special</div>
-          {pokemon?.attacks?.special?.map((item) => {
-            return (
-              <div className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
-            )
-          })}
+          <div className="value flex flex-row">
+            {pokemon?.attacks?.special?.map((item) => {
+              return (
+                <div className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
+              )
+            })}
+          </div>
         </div>
         <div className="evolution-wrapper flex flex-row">
           <div className="name">Evolution</div>
