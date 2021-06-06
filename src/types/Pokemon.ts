@@ -38,6 +38,7 @@ type Pokemon = {
   ],
   "fleeRate": "number",
   "maxCP": "number",
+  "maxHP": "number",
   "evolutions": [
     {
       "number": "string",
