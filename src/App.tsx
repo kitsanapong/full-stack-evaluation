@@ -6,6 +6,7 @@ import {
 } from "@apollo/client";
 
 import SearchPage from './containers/SearchPage'
+import SearchText from './providers/searchText'
 import './styleGlobal.css'
 import './App.css';
 
@@ -19,7 +20,9 @@ function App() {
   return (
     <div className="app flex flex-column align-center">
       <ApolloProvider client={client}>
-        <SearchPage/>
+        <SearchText.Provider>
+          <SearchPage/>
+        </SearchText.Provider>
       </ApolloProvider>
     </div>
   );

@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { gql, useQuery } from '@apollo/client';
 
-import './style.css'
+import SearchText from '../../providers/searchText'
 import TextInput from '../../components/TextInput/index';
 import List from '../../components/List/index';
+
+import './style.css'
 
 const GET_POKEMONS_BY_NUMBER = gql`
   query pokemons($first: Int!){
@@ -62,7 +64,7 @@ const GET_POKEMONS_BY_NAME = gql`
 `
 
 const SearchPage = () => {
-  const [text, setText] = useState('')
+  const {text, setText} = useContext(SearchText.Context)
   const { loading: initialLoading, data: initialData } = useQuery(GET_POKEMONS_BY_NUMBER, {
     variables: {
       first: 151,

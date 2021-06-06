@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react'
 
 const Context = createContext('')
 
-const Provider = ({ children }) => {
+const Provider = ({ children }: any) => {
   const [text, setText] = useState('')
   return (
     <Context.Provider value={{
