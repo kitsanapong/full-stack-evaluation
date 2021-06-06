@@ -96,3 +96,7 @@
 .fairy-color {
   background-color: #e9e;
 }
+
+.clickable {
+  cursor: pointer;
+}

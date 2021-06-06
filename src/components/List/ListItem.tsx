@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import searchText from '../../providers/searchText';
 import ListItemProps from '../../types/ListItemProps';
 
 type StatItemProps = {
@@ -21,6 +22,7 @@ const StatItem = ({ matrix, value = 1, maxValue = 1 }: StatItemProps) => {
 }
 
 const ListItem = ({ pokemon}: ListItemProps) => {
+  const { setText } = useContext(searchText.Context)
   const firstType = pokemon?.types?.[0]
   return (
     <div className={`list-item flex flex-row ${firstType?.toLocaleLowerCase()}-color`}>
@@ -63,7 +65,10 @@ const ListItem = ({ pokemon}: ListItemProps) => {
           <div className="name">Evolution</div>
           {pokemon?.evolutions?.map((evo) => {
             return (
-              <div className="evolution">{evo?.name}</div>
+              <div
+                className="evolution clickable"
+                onClick={() => { setText(evo?.name) }}
+              >{evo?.name}</div>
             )
           })}
         </div>
