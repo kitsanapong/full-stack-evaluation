@@ -1,11 +1,7 @@
 import React from 'react'
 
 import './style.css'
-
-type TextInputProps = {
-  value: string,
-  onChange: Function,
-}
+import TextInputProps from '../../types/TextInputProps';
 
 const TextInput = ({ value = '', onChange = () => {}} : TextInputProps) => {
   return (
