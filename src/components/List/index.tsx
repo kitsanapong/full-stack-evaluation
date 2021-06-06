@@ -4,14 +4,17 @@ import ListItem from './ListItem';
 
 import './style.css'
 
-const List = () => {
+const List = ({ data = [] }) => {
   return (
     <div className="list-wrapper flex flex-column">
-      <ListItem></ListItem>
-      <ListItem></ListItem>
-      <ListItem></ListItem>
-      <ListItem></ListItem>
-      <ListItem></ListItem>
+      {data.map((item) => {
+        return (
+          <ListItem
+            key={item.id}
+            item={item}
+          />
+        )
+      })}
     </div>
   )
 }
