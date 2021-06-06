@@ -21,7 +21,8 @@ const StatItem = ({ matrix, value = 1, maxValue = 1 }: StatItemProps) => {
   )
 }
 
-const ListItem = ({ pokemon}: ListItemProps) => {
+const ListItem = ({ pokemon }: ListItemProps) => {
+  console.log(pokemon)
   const { setText } = useContext(searchText.Context)
   const firstType = pokemon?.types?.[0]
   return (
@@ -45,21 +46,21 @@ const ListItem = ({ pokemon}: ListItemProps) => {
             <StatItem matrix="Max HP" value={parseInt(pokemon?.maxHP)} maxValue={4144}/>
           </div>
         </div>
-        <div className="type-counterpart-wrapper flex flex-row">
-          <div className="name">Resistant</div>
-          <div className="type-wrapper flex flex-row">
-            {pokemon?.resistant?.map((type) => {
-              return <div key={type} className={`type small ${type?.toLocaleLowerCase()}-color`}>{type}</div>
-            })}
-          </div>
+        <div className="attack-wrapper flex flex-row">
+          <div className="name">Attack Fast</div>
+          {pokemon?.attacks?.fast?.map((item) => {
+            return (
+              <div className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
+            )
+          })}
         </div>
-        <div className="type-counterpart-wrapper flex flex-row">
-          <div className="name">Weaknesses</div>
-          <div className="type-wrapper flex flex-row">
-            {pokemon?.weaknesses?.map((type) => {
-              return <div key={type} className={`type small ${type?.toLocaleLowerCase()}-color`}>{type}</div>
-            })}
-          </div>
+        <div className="attack-wrapper flex flex-row">
+          <div className="name">Attack Special</div>
+          {pokemon?.attacks?.special?.map((item) => {
+            return (
+              <div className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
+            )
+          })}
         </div>
         <div className="evolution-wrapper flex flex-row">
           <div className="name">Evolution</div>

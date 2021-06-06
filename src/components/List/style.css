@@ -144,3 +144,26 @@
   border: 1px solid white;
   margin-right: 6px;
 }
+
+.attack-wrapper {
+  max-width: 420px;
+  margin-bottom: 1px;
+}
+
+.attack-wrapper .name {
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.87;
+  min-width: 99px;
+}
+
+.attack-wrapper .attack {
+  font-size: 10px;
+  font-weight: bold;
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin-right: 3px;
+  padding: 0px 3px;
+}

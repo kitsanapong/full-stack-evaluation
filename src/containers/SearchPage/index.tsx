@@ -13,25 +13,27 @@ const GET_POKEMONS_BY_NUMBER = gql`
       id
       number
       name
-      weight{
-        minimum
-        maximum
-      }
-      height{
-        minimum
-        maximum
-      }
-      classification
       types
       resistant
       weaknesses
-      fleeRate
       maxCP
       maxHP
       image
       evolutions{
         id
         name
+      }
+      attacks{
+        fast{
+          name,
+          type,
+          damage,
+        }
+        special{
+          name,
+          type,
+          damage,
+        }
       }
     }
   }
