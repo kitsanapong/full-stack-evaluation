@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './style.css'
+
 type TextInputProps = {
   value: string,
   onChange: Function,
