@@ -61,6 +61,22 @@ const GET_POKEMONS_BY_NAME = gql`
       maxCP
       maxHP
       image
+      evolutions{
+        id
+        name
+      }
+      attacks{
+        fast{
+          name,
+          type,
+          damage,
+        }
+        special{
+          name,
+          type,
+          damage,
+        }
+      }
     }
   }
 `
