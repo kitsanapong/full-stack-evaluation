@@ -13,19 +13,141 @@ const StatItem = ({ matrix, value = 1 }) => {
   )
 }
 
-const ListItem = () => {
+type Pokemon = {
+  "number": "string",
+  "name": "string",
+  "image": "string",
+  "weight": {
+    "minimum": "string",
+    "maximum": "string"
+  },
+  "height": {
+    "minimum": "string",
+    "maximum": "string"
+  },
+  "classification": "string",
+  "types": [
+    "string"
+  ],
+  "resistant": [
+    "string"
+  ],
+  "attacks": {
+    "fast": [
+      {
+        "name": "string",
+        "type": "string",
+        "damage": "number"
+      }
+    ],
+    "special": [
+      {
+        "name": "string",
+        "type": "string",
+        "damage": "number"
+      }
+    ]
+  },
+  "weaknesses": [
+    "string"
+  ],
+  "fleeRate": "number",
+  "maxCP": "number",
+  "evolutions": [
+    {
+      "number": "string",
+      "name": "string",
+      "weight": {
+        "minimum": "string",
+        "maximum": "string"
+      },
+      "height": {
+        "minimum": "string",
+        "maximum": "string"
+      },
+      "classification": "string",
+      "types": [
+        "string"
+      ],
+      "resistant": [
+        "string"
+      ],
+      "attacks": {
+        "fast": [
+          {
+            "name": "string",
+            "type": "string",
+            "damage": "number"
+          }
+        ],
+        "special": [
+          {
+            "name": "string",
+            "type": "string",
+            "damage": "number"
+          }
+        ]
+      },
+      "weaknesses": [
+        "string"
+      ],
+      "fleeRate": "number",
+      "maxCP": "number",
+      "evolutions": [
+        {
+          "number": "string",
+          "name": "string",
+          "weight": {
+            "minimum": "string",
+            "maximum": "string"
+          },
+          "height": {
+            "minimum": "string",
+            "maximum": "string"
+          },
+          "classification": "string",
+          "types": [
+            "string"
+          ],
+          "resistant": [
+            "string"
+          ],
+          "attacks": {
+            "fast": [
+              {
+                "name": "string",
+                "type": "string",
+                "damage": "number"
+              }
+            ],
+            "special": [
+              null
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+type ListItemProps = { key: String; pokemon: Pokemon; }
+
+const ListItem = ({ pokemon}: ListItemProps) => {
+  console.log(pokemon)
+  const firstType = pokemon?.types?.[0]
   return (
-    <div className="list-item flex flex-row grass-color">
+    <div className={`list-item flex flex-row ${firstType?.toLocaleLowerCase()}-color`}>
       <div className="image">
-        <img src="https://img.pokemondb.net/artwork/venusaur-mega.jpg"/>
+        <img src={pokemon?.image}/>
       </div>
       <div className="detail flexx flex-column">
         <div className="basic-info flex flex-row">
-          <div className="number">#003</div>
-          <div className="name">Venusaur</div>
+          <div className="number">#{pokemon?.number}</div>
+          <div className="name">{pokemon?.name}</div>
           <div className="type-wrapper flex flex-row">
-            <div className="type grass-color">GRASS</div>
-            <div className="type poison-color">POISION</div>
+            {pokemon?.types?.map((type) =>{
+              return <div key={type} className={`type ${type?.toLocaleLowerCase()}-color`}>{type}</div>
+            })}
           </div>
         </div>
         <div className="state-wrapper flex flex-row">
@@ -46,9 +168,11 @@ const ListItem = () => {
         </div>
         <div className="evolution-wrapper flex flex-row">
           <div className="name">Evolution</div>
-          <div className="evolution">Bulbasaur</div>
-          <div className="evolution">Ivysaur</div>
-          <div className="evolution">Venusaur</div>
+          {pokemon?.evolutions?.map((evo) => {
+            return (
+              <div className="evolution">{evo?.name}</div>
+            )
+          })}
         </div>
       </div>
     </div>

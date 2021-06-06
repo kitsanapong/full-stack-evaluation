@@ -11,7 +11,7 @@ const List = ({ data = [] }) => {
         return (
           <ListItem
             key={item.id}
-            item={item}
+            pokemon={item}
           />
         )
       })}
