@@ -8,8 +8,13 @@
   padding: 12px;
 }
 
+.list-item .image {
+  height: 98px;
+}
+
 .list-item .image img{
-  width: 150px;
+  width: 130px;
+  height: 98px;
   border-radius: 10px;
 }
 
@@ -19,13 +24,13 @@
   width: 100%;
 }
 
-.list-item .detail .number{
+.list-item .detail .basic-info .number{
   font-size: 16px;
   font-weight: bold;
   font-style: oblique;
 }
 
-.list-item .detail .name{
+.list-item .detail .basic-info .name{
   font-size: 16px;
   font-weight: bold;
   margin-left: 6px;
@@ -48,7 +53,7 @@
 
 .state-wrapper {
   margin-top: 6px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
@@ -59,6 +64,7 @@
 .state-item {
   width: 100%;
   font-size: 12px;
+
 }
 
 .state-item .matrix {
@@ -96,4 +102,19 @@
 
 .sum-state-column .matrix{
   font-size: 12px;
+}
+
+.evolution-wrapper .name{
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.87;
+  min-width: 65px;
+}
+
+.evolution-wrapper .evolution{
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0px 3px;
+  border: 1px solid white;
+  margin-right: 6px;
 }

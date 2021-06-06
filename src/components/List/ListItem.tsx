@@ -44,7 +44,12 @@ const ListItem = () => {
             <div className="value">625</div>
           </div>
         </div>
-        <div>Evolutions</div>
+        <div className="evolution-wrapper flex flex-row">
+          <div className="name">Evolution</div>
+          <div className="evolution">Bulbasaur</div>
+          <div className="evolution">Ivysaur</div>
+          <div className="evolution">Venusaur</div>
+        </div>
       </div>
     </div>
   )
