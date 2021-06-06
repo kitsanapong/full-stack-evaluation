@@ -5,6 +5,7 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 
+import SearchPage from './containers/SearchPage'
 import './App.css';
 
 const client = new ApolloClient({
@@ -14,9 +15,11 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      App
-    </ApolloProvider>
+    <div className="app">
+      <ApolloProvider client={client}>
+        <SearchPage/>
+      </ApolloProvider>
+    </div>
   );
 }
 
