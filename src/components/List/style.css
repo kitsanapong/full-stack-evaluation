@@ -10,12 +10,16 @@
 
 .list-item .image {
   height: 98px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 3px;
 }
 
 .list-item .image img{
   width: 130px;
   height: 98px;
   border-radius: 10px;
+  object-fit: contain;
 }
 
 .list-item .detail {
