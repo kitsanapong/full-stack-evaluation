@@ -12,6 +12,7 @@ const TextInput = ({ value = '', onChange = () => {}} : TextInputProps) => {
     <div className="text-input">
       <input
         value={value}
+        placeHolder="Search Pokemon"
         onChange={(e) => { onChange(e) }}
       />
     </div>
