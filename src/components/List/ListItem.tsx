@@ -22,7 +22,6 @@ const StatItem = ({ matrix, value = 1, maxValue = 1 }: StatItemProps) => {
 }
 
 const ListItem = ({ pokemon }: ListItemProps) => {
-  console.log(pokemon)
   const { setText } = useContext(searchText.Context)
   const firstType = pokemon?.types?.[0]
   return (
@@ -50,7 +49,7 @@ const ListItem = ({ pokemon }: ListItemProps) => {
           <div className="name">Attack Fast</div>
           {pokemon?.attacks?.fast?.map((item) => {
             return (
-              <div className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
+              <div key={item?.name} className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
             )
           })}
         </div>
@@ -59,7 +58,7 @@ const ListItem = ({ pokemon }: ListItemProps) => {
           <div className="value flex flex-row">
             {pokemon?.attacks?.special?.map((item) => {
               return (
-                <div className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
+                <div key={item?.name} className={`attack ${item?.type?.toLocaleLowerCase()}-color`}>{item?.damage} {item?.name}</div>
               )
             })}
           </div>
@@ -69,6 +68,7 @@ const ListItem = ({ pokemon }: ListItemProps) => {
           {pokemon?.evolutions?.map((evo) => {
             return (
               <div
+                key={evo?.name}
                 className="evolution clickable"
                 onClick={() => { setText(evo?.name) }}
               >{evo?.name}</div>
