@@ -63,7 +63,7 @@ const GET_POKEMONS_BY_NAME = gql`
 
 const SearchPage = () => {
   const [text, setText] = useState('')
-  const { data: initialData } = useQuery(GET_POKEMONS_BY_NUMBER, {
+  const { loading: initialLoading, data: initialData } = useQuery(GET_POKEMONS_BY_NUMBER, {
     variables: {
       first: 151,
     }
@@ -91,7 +91,9 @@ const SearchPage = () => {
         value={text}
         onChange={(e) => { setText(e?.target?.value) }}
       />
-      <List data={dataToShow}></List>
+      {initialLoading? null : (
+        <List data={dataToShow}></List>
+      )}
     </div>
   )
 }
