@@ -39,7 +39,7 @@ const SearchPage = () => {
   const [text, setText] = useState('')
   const { loading, error, data } = useQuery(GET_POKEMONS_BY_NUMBER, {
     variables: {
-      first: 20,
+      first: 50,
     }
   })
 
