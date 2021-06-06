@@ -21,7 +21,7 @@ const StatItem = ({ matrix, value = 1, maxValue = 1 }: StatItemProps) => {
 }
 
 const ListItem = ({ pokemon}: ListItemProps) => {
-  console.log(typeof pokemon.maxCP)
+  console.log(pokemon)
   const firstType = pokemon?.types?.[0]
   return (
     <div className={`list-item flex flex-row ${firstType?.toLocaleLowerCase()}-color`}>
@@ -40,19 +40,25 @@ const ListItem = ({ pokemon}: ListItemProps) => {
         </div>
         <div className="state-wrapper flex flex-row">
           <div className="state-column flex flex-column">
-            <StatItem matrix="MAX CP" value={parseInt(pokemon?.maxCP)} maxValue={3904}/>
-            <StatItem matrix="MAX HP" value={parseInt(pokemon?.maxHP)} maxValue={4144}/>
-            {/* <StatItem matrix="Defense" value={123}/> */}
+            <StatItem matrix="Max CP" value={parseInt(pokemon?.maxCP)} maxValue={3904}/>
+            <StatItem matrix="Max HP" value={parseInt(pokemon?.maxHP)} maxValue={4144}/>
           </div>
-          {/* <div className="state-column flex flex-column">
-            <StatItem matrix="Sp. Atk" value={122}/>
-            <StatItem matrix="Sp. Def" value={120}/>
-            <StatItem matrix="Speed" value={80}/>
+        </div>
+        <div className="type-counterpart-wrapper flex flex-row">
+          <div className="name">Resistant</div>
+          <div className="type-wrapper flex flex-row">
+            {pokemon?.resistant?.map((type) => {
+              return <div key={type} className={`type small ${type?.toLocaleLowerCase()}-color`}>{type}</div>
+            })}
           </div>
-          <div className="sum-state-column flex flex-column justify-center">
-            <div className="matrix">Total</div>
-            <div className="value">625</div>
-          </div> */}
+        </div>
+        <div className="type-counterpart-wrapper flex flex-row">
+          <div className="name">Weaknesses</div>
+          <div className="type-wrapper flex flex-row">
+            {pokemon?.weaknesses?.map((type) => {
+              return <div key={type} className={`type small ${type?.toLocaleLowerCase()}-color`}>{type}</div>
+            })}
+          </div>
         </div>
         <div className="evolution-wrapper flex flex-row">
           <div className="name">Evolution</div>

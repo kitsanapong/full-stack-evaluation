@@ -55,9 +55,14 @@
   padding: 0px 3px;
 }
 
+.list-item .detail .type-wrapper .type.small {
+  height: 14px;
+  line-height: 14px;
+  font-size: 8px;
+}
+
 .state-wrapper {
   margin-top: 6px;
-  margin-bottom: 10px;
   width: 100%;
 }
 
@@ -114,7 +119,22 @@
   font-size: 12px;
   font-weight: bold;
   opacity: 0.87;
-  min-width: 65px;
+  min-width: 99px;
+}
+
+.type-counterpart-wrapper {
+  margin: 1px 0px;
+}
+
+.type-counterpart-wrapper .name{
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.87;
+  min-width: 87px;
+}
+
+.evolution-wrapper {
+  margin-top: 2px;
 }
 
 .evolution-wrapper .evolution{
